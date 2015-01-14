@@ -56,7 +56,9 @@ public class MainActivity extends ActionBarActivity {
     public void substituteText(View view){
         EditText pt = (EditText) findViewById(R.id.plainText);
         EditText ct = (EditText) findViewById(R.id.cipherText);
-
+        StringBuilder orig_ct_txt = new StringBuilder(ct.getText().toString());
+        String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+        "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
         /*
         We will load up all the individual letters
          */
@@ -86,8 +88,26 @@ public class MainActivity extends ActionBarActivity {
         EditText txtX = (EditText)  findViewById(R.id.txtX);
         EditText txtY = (EditText)  findViewById(R.id.txtY);
         EditText txtZ = (EditText)  findViewById(R.id.txtZ);
-
-        ct.setText(pt.getText());
+        EditText[] txtArray = {txtA, txtB, txtC, txtD, txtE, txtF, txtG, txtH, txtI, txtJ, txtK, txtL,
+        txtM, txtN, txtO, txtP, txtQ, txtR, txtS, txtT, txtU, txtV, txtW, txtX, txtY, txtZ};
+        for(int i = 0; i < orig_ct_txt.length(); i++){
+            char c = orig_ct_txt.charAt(i);
+            for(int j = 0; j < 26; j++){
+                char alphaChar = alphabet[j].charAt(0);
+                String txt = txtArray[j].getText().toString();
+                if(c == alphaChar || c == Character.toLowerCase(alphaChar)){
+                    if(txt.equals("")) {
+                        c = '_';
+                    }
+                    else {
+                        c = txt.charAt(0);
+                    }
+                    orig_ct_txt.setCharAt(i, c);
+                    break;
+                }
+            }
+        }
+        pt.setText(orig_ct_txt.toString());
     }
 
     @Override
