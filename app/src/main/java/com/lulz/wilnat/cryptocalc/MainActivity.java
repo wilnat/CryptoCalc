@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -52,6 +53,42 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public void substituteText(View view){
+        EditText pt = (EditText) findViewById(R.id.plainText);
+        EditText ct = (EditText) findViewById(R.id.cipherText);
+
+        /*
+        We will load up all the individual letters
+         */
+        EditText txtA = (EditText)  findViewById(R.id.txtA);
+        EditText txtB = (EditText)  findViewById(R.id.txtB);
+        EditText txtC = (EditText)  findViewById(R.id.txtC);
+        EditText txtD = (EditText)  findViewById(R.id.txtD);
+        EditText txtE = (EditText)  findViewById(R.id.txtE);
+        EditText txtF = (EditText)  findViewById(R.id.txtF);
+        EditText txtG = (EditText)  findViewById(R.id.txtG);
+        EditText txtH = (EditText)  findViewById(R.id.txtH);
+        EditText txtI = (EditText)  findViewById(R.id.txtI);
+        EditText txtJ = (EditText)  findViewById(R.id.txtJ);
+        EditText txtK = (EditText)  findViewById(R.id.txtK);
+        EditText txtL = (EditText)  findViewById(R.id.txtL);
+        EditText txtM = (EditText)  findViewById(R.id.txtM);
+        EditText txtN = (EditText)  findViewById(R.id.txtN);
+        EditText txtO = (EditText)  findViewById(R.id.txtO);
+        EditText txtP = (EditText)  findViewById(R.id.txtP);
+        EditText txtQ = (EditText)  findViewById(R.id.txtQ);
+        EditText txtR = (EditText)  findViewById(R.id.txtR);
+        EditText txtS = (EditText)  findViewById(R.id.txtS);
+        EditText txtT = (EditText)  findViewById(R.id.txtT);
+        EditText txtU = (EditText)  findViewById(R.id.txtU);
+        EditText txtV = (EditText)  findViewById(R.id.txtV);
+        EditText txtW = (EditText)  findViewById(R.id.txtW);
+        EditText txtX = (EditText)  findViewById(R.id.txtX);
+        EditText txtY = (EditText)  findViewById(R.id.txtY);
+        EditText txtZ = (EditText)  findViewById(R.id.txtZ);
+
+        ct.setText(pt.getText());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
